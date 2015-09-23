@@ -15,14 +15,14 @@ TARGET_FILES = \
 	index.py \
 	bundle.json \
 	requirements.txt \
-	serial/__init__.py \
+	mxserial/__init__.py \
 	data/serials.json.factory
 DIST_FILES= \
 	$(TARGET_FILES) \
 	Makefile \
 	tests/__init__.py \
-	tests/test_serial/__init__.py \
-	tests/test_serial/test___init__.py
+	tests/test_mxserial/__init__.py \
+	tests/test_mxserial/test___init__.py
 INSTALL_FILES=$(addprefix $(INSTALL_DIR)/,$(TARGET_FILES))
 STAGING_FILES=$(addprefix $(PROJECT_STAGING_DIR)/,$(DIST_FILES))
 
@@ -39,13 +39,13 @@ clean:
 distclean: clean
 
 pylint:
-	flake8 -v ./serial
+	flake8 -v ./mxserial
 
 jscpd:
 	jscpd
 
 test:
-	nosetests --with-coverage --cover-package=serial --cover-erase
+	nosetests --with-coverage --cover-package=mxserial --cover-erase
 
 debian-changelog:
 	@cd build-deb && dch  -u low -D unstable -v "`sed -n 's/.*"version":.*"\(.*\)",/\1/p' ../bundle.json`"

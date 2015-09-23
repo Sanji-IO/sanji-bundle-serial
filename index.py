@@ -5,7 +5,7 @@ import os
 import logging
 from sanji.core import Sanji
 from sanji.core import Route
-from serial import Serials
+from mxserial import Serials
 
 
 _logger = logging.getLogger("sanji.serial.index")

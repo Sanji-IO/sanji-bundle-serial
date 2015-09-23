@@ -8,11 +8,10 @@ import unittest
 
 from mock import Mock
 from mock import patch
-from mock import ANY
 
 try:
     sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../../")
-    from serial import Serials
+    from mxserial import Serials
 except ImportError as e:
     print "Please check the python PATH for import test module. (%s)" \
         % __file__
@@ -41,7 +40,7 @@ class TestInterfacesClass(unittest.TestCase):
             self.assertIn("mode", serial)
             self.assertIn("id", serial)
 
-    @patch("serial.sh")
+    @patch("mxserial.sh")
     def test_set_serial(self, sh):
         m = Mock()
         sh.setinterface = m
