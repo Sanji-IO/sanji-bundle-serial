@@ -1,0 +1,5 @@
+flake8
+paho-mqtt>=1.1
+coveralls
+sanji>=0.0.8
+sh

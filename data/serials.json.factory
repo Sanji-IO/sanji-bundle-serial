@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "dev": "/dev/ttyM0",
+    "devDisplayName": "PORT 1",
+    "mode": "rs232"
+  },
+  {
+    "id": 2,
+    "dev": "/dev/ttyM1",
+    "devDisplayName": "PORT 2",
+    "mode": "rs232"
+  }
+]

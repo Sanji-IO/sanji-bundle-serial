@@ -1,0 +1,26 @@
+{
+  "name": "serial",
+  "version": "0.9.0",
+  "author": "Zack YL Shih",
+  "email": "zackyl.shih@moxa.com",
+  "description": "Set UART mode utility",
+  "license": "MOXA",
+  "main": "index.py",
+  "argument": "",
+  "priority": 1,
+  "hook": [],
+  "dependencies": {},
+  "repository": "",
+  "role": "model",
+  "ttl": 10,
+  "resources": [
+    {
+      "methods": ["get"],
+      "resource": "/system/serial"
+    },
+    {
+      "methods": ["put"],
+      "resource": "/system/serial/:id"
+    }
+  ]
+}
