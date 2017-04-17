@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "author": "Zack YL Shih",
   "email": "zackyl.shih@moxa.com",
-  "description": "Set UART mode utility",
+  "description": "Provides the utility to set the serial mode",
   "license": "MOXA",
   "main": "index.py",
   "argument": "",

@@ -1,0 +1,142 @@
+swagger: '2.0'
+
+info:
+  title: Serial interface API
+  description: Serial interface management
+  version: '0.0.1'
+
+schemes:
+- http
+- https
+
+produces:
+- application/json
+
+paths:
+  /system/serial:
+    get:
+      description: Get all of serial interfaces settings
+      responses:
+        200:
+          description: success
+          schema:
+            $ref: '#/definitions/Serials'
+          examples:
+            {
+              "application/json": {
+                $ref: '#/externalDocs/x-mocks/SerialsExample'
+              }
+            }
+
+  /system/serial/{id}:
+    parameters:
+    - name: id
+      in: path
+      type: integer
+      required: true
+
+    get:
+      description: Get a serial interface configuration
+      responses:
+        200:
+          description: success
+          schema:
+            $ref: '#/definitions/Serial'
+          examples:
+            {
+              "application/json": {
+                $ref: '#/externalDocs/x-mocks/SerialExample'
+              }
+            }
+
+    put:
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Serial'
+      description: Update a dhcp server configuration
+      responses:
+        200:
+          description: success
+          schema:
+            $ref: '#/definitions/Serial'
+          examples:
+            {
+              "application/json": {
+                $ref: '#/externalDocs/x-mocks/SerialExample'
+              }
+            }
+
+definitions:
+  Serial:
+    description: Serial interface configuration
+    type: object
+    required:
+    - mode
+    properties:
+      id:
+        description: ID of serial interface
+        type: integer
+        readOnly: true
+      dev:
+        description: Serial interface physical path
+        type: string
+        readOnly: true
+        minLength: 1
+        maxLength: 1024
+      devDisplayName:
+        description: Display name of serial interface
+        readOnly: true
+        type: string
+      mode:
+        description: Mode of serial interface
+        type: string
+        enum:
+        - rs232
+        - rs485-2w
+        - rs422/rs485-4w
+    example:
+      $ref: '#/externalDocs/x-mocks/SerialExample'
+
+  Serials:
+    description: Collection of serial interfaces
+    type: array
+    items:
+      $ref: '#/definitions/Serial'
+    example:
+      $ref: '#/externalDocs/x-mocks/SerialsExample'
+
+externalDocs:
+  url: '#'
+  x-mocks:
+    SerialExample:
+      {
+        "id": 1,
+        "dev": "/dev/ttyM0",
+        "devDisplayName": "PORT-1",
+        "mode": "rs232"
+      }
+
+    SerialsExample:
+      [
+        {
+          "id": 1,
+          "dev": "/dev/ttyM0",
+          "devDisplayName": "PORT-1",
+          "mode": "rs232"
+        },
+        {
+          "id": 2,
+          "dev": "/dev/ttyM1",
+          "devDisplayName": "PORT-2",
+          "mode": "rs485-2w"
+        },
+        {
+          "id": 3,
+          "dev": "/dev/ttyM2",
+          "devDisplayName": "PORT 3",
+          "mode": "rs422/rs485-4w"
+        }
+      ]
