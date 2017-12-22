@@ -1,4 +1,4 @@
-sanji-bundle-serial (0.9.1-1) unstable; urgency=low
+sanji-bundle-serial (0.9.1) unstable; urgency=low
 
   * chore: add tests/requirements.txt.
 
