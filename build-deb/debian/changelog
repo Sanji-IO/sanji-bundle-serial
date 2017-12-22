@@ -1,3 +1,9 @@
+sanji-bundle-serial (0.9.1-1) unstable; urgency=low
+
+  * chore: add tests/requirements.txt.
+
+ -- Zack YL Shih <zackyl.shih@moxa.com>  Fri, 22 Dec 2017 11:08:51 +0800
+
 sanji-bundle-serial (0.9.0) unstable; urgency=low
 
   * Initial Release.
