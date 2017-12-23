@@ -19,7 +19,7 @@
       "resource": "/system/serial"
     },
     {
-      "methods": ["put"],
+      "methods": ["put", "get"],
       "resource": "/system/serial/:id"
     }
   ]
