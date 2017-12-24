@@ -25,6 +25,13 @@ class Index(Sanji):
     def get(self, message, response):
         return response(data=self.serials.getAll())
 
+    @Route(methods="get", resource="/system/serial/:id")
+    def get_by_id(self, message, response):
+        serial = self.serials.get(int(message.param["id"])
+        if serial is None:
+            return response(code=404)
+        return response(data=serial)
+
     @Route(methods="put", resource="/system/serial/:id")
     def put(self, message, response):
         updatedTemplate = self.serials.update(
