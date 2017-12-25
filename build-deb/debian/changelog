@@ -1,4 +1,4 @@
-sanji-bundle-serial (0.9.3-1) unstable; urgency=low
+sanji-bundle-serial (0.9.3) unstable; urgency=low
 
   * fix: fix syntax error
 
