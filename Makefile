@@ -39,7 +39,7 @@ clean:
 distclean: clean
 
 pylint:
-	flake8 -v ./mxserial
+	flake8 -v index.py ./mxserial
 
 jscpd:
 	jscpd

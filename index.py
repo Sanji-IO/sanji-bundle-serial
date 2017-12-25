@@ -27,7 +27,7 @@ class Index(Sanji):
 
     @Route(methods="get", resource="/system/serial/:id")
     def get_by_id(self, message, response):
-        serial = self.serials.get(int(message.param["id"])
+        serial = self.serials.get(int(message.param["id"]))
         if serial is None:
             return response(code=404)
         return response(data=serial)
