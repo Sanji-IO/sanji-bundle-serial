@@ -1,3 +1,4 @@
-flake8
 coveralls
-
+flake8
+mock
+nose
